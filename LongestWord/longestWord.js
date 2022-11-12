@@ -18,5 +18,3 @@ const longer = () => {
 }
 
 console.log(longer())
-
-// module.exports = { addNum, greaterThan5, reverseString }
