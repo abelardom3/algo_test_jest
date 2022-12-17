@@ -1,6 +1,6 @@
 // longest word 
 
-const str = 'This is a longerrr word'
+const str = 'This is a superlongword test'
 
 const longer = () => {
     const arr = str.split(' ')
