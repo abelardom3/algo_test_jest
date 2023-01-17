@@ -8,7 +8,7 @@ Input: nums = [1], k = 1
 Output: [1]
 
 */
-const nums = [1, 1, 1, 2, 2, 3]
+const nums = [1, 1, 1, 2, 2, 3, 4, 4, 4, 5, 5, 6, 6, 6, 6, 6, 6]
 const k = 2
 
 
