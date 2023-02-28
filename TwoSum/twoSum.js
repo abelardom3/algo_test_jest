@@ -1,6 +1,6 @@
 
-const array = [1, 2, 4, 8]
-const sum = 12
+const array = [10, 2, 10, 8]
+const sum = 20
 
 // const validInput = (array, sum) => {
 //     const past = []
@@ -19,24 +19,38 @@ const sum = 12
 // }
 
 
-// Two sum that returns an array with the indexes that add up to the sum 
 
-const validInput = (arr, sum) => {
-    const cont = []
+// Two sum that returns an array with the indexes that add up to the sum 
+// O(n) runtime
+
+const sumOf = (arr, sum) => {
+
+    // we create an array to store numbers later on 
+    const past = []
+
+    // we for loop and get the difference between the sum and current number 
     for (let i = 0; i < arr.length; i++) {
         let current = arr[i]
         let neededNum = sum - current
-        if (!cont.includes(neededNum)) {
-            cont.push(current)
+        // Next we check if the needed number is present if not then we store the current number 
+        if (!past.includes(neededNum)) {
+            past.push(current)
         } else {
-            return [cont.indexOf(neededNum), i]
+            // else if it is present then we know we have the pair that adds up to the sum
+            // we return the array with the indexes of the pair 
+            return [past.indexOf(neededNum), i]
         }
+
     }
-    return -1
+
+    // if no pair adds up to the sum we return false
+    return false
 }
 
+console.log(sumOf(array, sum))
 
-console.log(validInput(array, sum))
+
+
 
 
 
