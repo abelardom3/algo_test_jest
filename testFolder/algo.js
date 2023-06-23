@@ -1,6 +1,6 @@
 
 
-const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 const letters = 'This is a string and what not'
 
 
@@ -19,7 +19,7 @@ const reverse = (arr) => {
     return result;
 }
 
-// console.log(reverse(letters))
+//console.log(reverse(letters))
 
 
 
@@ -53,24 +53,29 @@ const impure = (arr) => {
 const fizzBuzz = (num) => {
     const obj = {}
     // loop through the given input 
-    for (let index = 1; index <= num; index++) {
-
+    for (let i = 1; i <= num; i++) {
         // check if current number is divisible ny 3, 5, or 15 and console.log corrensponding words;
-        if (index % 15 === 0) {
-            !obj.fizzBuzz ? obj.fizzBuzz = [index] : obj.fizzBuzz.push(index)
-        } else if (index % 3 === 0) {
-            !obj.fizz ? obj.fizz = [index] : obj.fizz.push(index)
-        } else if (index % 5 === 0) {
-            !obj.buzz ? obj.buzz = [index] : obj.buzz.push(index)
+        if (i % 15 === 0) {
+            !obj.fizzBuzz ? obj.fizzBuzz = [i] : obj.fizzBuzz.push(i)
+        } else if (i % 3 === 0) {
+            !obj.fizz ? obj.fizz = [i] : obj.fizz.push(i)
+        } else if (i % 5 === 0) {
+            !obj.buzz ? obj.buzz = [i] : obj.buzz.push(i)
         } else {
-            !obj.random ? obj.random = [index] : obj.random.push(index)
+            !obj.other ? obj.other = [i] : obj.other.push(i)
         }
-
     }
     return obj
 }
 
-// console.log(fizzBuzz(50))
+
+//console.log(fizzBuzz(50))
+
+
+
+
+
+
 
 
 // chunky array 
@@ -78,25 +83,26 @@ const fizzBuzz = (num) => {
 
 const chunky = (arr, num) => {
     // create the array we will return and store
-    let array = []
+    let result = []
     // loop through array, create variable last that will target the last element of new array 
     for (let i = 0; i < arr.length; i++) {
-        let last = array[array.length - 1]
-        let current = arr[i]
+        let last = result[result.length - 1]
         //check if there is no last array or the length of the last element is equal to the num
-        // push to the new array the current number inside an array
         if (!last || last.length === num) {
-            array.push([current])
+            // push to the new array the current number inside an array
+            result.push([arr[i]])
         } else {
             // else push current number into the last element 
-            last.push(current)
+            last.push(arr[i])
         }
     }
-
-    return array;
+    return result;
 }
 
-// console.log(chunky(numbers, 3))
+//console.log(chunky(numbers, 3))
+
+
+
 
 
 
@@ -225,4 +231,38 @@ const binary = (arr, target) => {
 }
 
 
-console.log(binary(sortedNumbers, 12))
+// console.log(binary(sortedNumbers, 12))
+
+function ransome2(mag, note) {
+    const removeSpaces = word => word !== ''
+
+    const magArr = mag.split(' ').filter(removeSpaces)
+    const noteArr = note.split(' ').filter(removeSpaces)
+    const obj = {}
+
+    magArr.forEach(word => !obj[word] ? obj[word] = 1 : obj[word]++)
+
+    let result = true
+
+    noteArr.forEach(word => obj[word] ? obj[word]-- : obj[word] < 0 ? result = false : result = false)
+
+    return obj;
+}
+
+
+
+console.log(ransome2("Hello my name is bob what is your . and ", 'my name is bob'))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
